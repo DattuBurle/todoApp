@@ -1,0 +1,61 @@
+h1 {
+  margin: 32px 0;
+  color: #000000;
+  font-size: 14px;
+}
+
+.complete {
+  text-decoration: line-through !important;
+  opacity: 0.4;
+
+}
+ 
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #000000;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 18px -9px rgba(0, 0, 0, 0.75);
+  padding: 16px;
+  border-radius: 5px;
+  width: 70%;
+  font-size: 14px;
+}
+
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.edit-icon {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+.c{
+display: flex;
+flex-direction: row;
+background-color: #FFFFFF;
+align-items: center;
+cursor: pointer;
+}
+
+
+.dragIcon{
+margin-right: 10px!important;
+cursor: pointer;
+font-size: 24px;
+background-color: #FFFFFF;
+}
