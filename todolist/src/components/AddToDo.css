@@ -2,7 +2,8 @@
   .AddTask{
       display: flex;
       flex: 1;
-      width: 100%
+      width: 100%;
+      position: sticky;
   }
   .todo-form {
     display: flex;
