@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './ToDoList.css';
 import AddToDo from "./AddToDo";
 import Todo from './ToDo';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import Header from "./Header";
 
 
