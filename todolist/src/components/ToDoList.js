@@ -3,6 +3,7 @@ import './ToDoList.css';
 import AddToDo from "./AddToDo";
 import Todo from './ToDo';
 import Header from "./Header";
+import Tabs from "./Tabs";
 
 
 
@@ -62,9 +63,8 @@ function ToDoList() {
     return (
       <div className="todoList">
           <Header searchChange = {onSearchChange}/>
-          <AddToDo onSubmit={addTodo}/>
-          
-          <Todo
+          <Tabs 
+            onSubmit={addTodo}
             todos={listofTodos}
             completeTodo={completeTodo}
             removeTodo={removeTodo}
