@@ -35,7 +35,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
           key={index}
         > 
           <div key={todo.id} className='c' >
-            <input type="checkbox" id="check" className='dragIcon' onClick={() => completeTodo(todo.id)}/>
+            <input type="checkbox" id="check" className='dragIcon' onClick={() => completeTodo(todo.id)} checked="true"/>
             {todo.text}
           </div>
           <div className='icons'>
