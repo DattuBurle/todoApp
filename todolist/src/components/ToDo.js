@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import AddToDo from './AddToDo';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
-import DragIndicatorIcon from '@material-ui/icons/DragIndicator';
 
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
@@ -25,28 +24,35 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
 
   return (
     todos.map((todo, index) => (
-    <div
-      className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
-      key={index}
-    > 
+    
+        
+        todo.completed ? 
+        console.log("task completed, check it in completed tab")
+
+        : 
+        <div
+          className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+          key={index}
+        > 
+          <div key={todo.id} className='c' >
+            <input type="checkbox" id="check" className='dragIcon' onClick={() => completeTodo(todo.id)}/>
+            {todo.text}
+          </div>
+          <div className='icons'>
+            <DeleteForeverIcon
+              style={{ fontSize: 20 }}
+              onClick={() => removeTodo(todo.id)}
+              className='delete-icon'
+            />
+            <EditIcon
+              style={{ fontSize: 20 }}
+              onClick={() => setEdit({ id: todo.id, value: todo.text })}
+              className='edit-icon'
+            />
+          </div>
+        </div>
       
-      <div key={todo.id} className='c' onClick={() => completeTodo(todo.id)} >
-        <DragIndicatorIcon className='dragIcon'/>
-        {todo.text}
-      </div>
-      <div className='icons'>
-        <DeleteForeverIcon
-          style={{ fontSize: 20 }}
-          onClick={() => removeTodo(todo.id)}
-          className='delete-icon'
-        />
-        <EditIcon
-          style={{ fontSize: 20 }}
-          onClick={() => setEdit({ id: todo.id, value: todo.text })}
-          className='edit-icon'
-        />
-      </div>
-    </div>
+      
   )));
 };
 

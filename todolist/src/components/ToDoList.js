@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import './ToDoList.css';
-import AddToDo from "./AddToDo";
-import Todo from './ToDo';
 import Header from "./Header";
 import Tabs from "./Tabs";
 
@@ -18,8 +16,6 @@ function ToDoList() {
     
     const [todos, setTodos] = useState([]);
     
-    const filterTodos = [...todos].filter(
-      todo => todo.text.toLowerCase().includes(searchfield.toLowerCase()))
 
     const addTodo = todo => {
         if (!todo.text || /^\s*$/.test(todo.text)){
@@ -52,11 +48,15 @@ function ToDoList() {
       let updatedTodos = todos.map(todo => {
         if (todo.id === id) {
           todo.isComplete = !todo.isComplete;
+          todo.completed = !todo.completed;
         }
         return todo;
       });
       setTodos(updatedTodos);
     };
+
+    const filterTodos = [...todos].filter(
+      todo => todo.text.toLowerCase().includes(searchfield.toLowerCase()))
     
     const listofTodos = (searchfield === '') ? [...todos] : filterTodos;
 

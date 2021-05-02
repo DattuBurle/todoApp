@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './Tabs.css';
 import ToDo from "./ToDo";
 import AddToDo from "./AddToDo";
+import Completed from "./Completed";
 
 function Tabs({ todos, completeTodo, removeTodo, updateTodo , onSubmit}) {
     const [toggleState, setToggleState] = useState(1);
@@ -45,7 +46,11 @@ function Tabs({ todos, completeTodo, removeTodo, updateTodo , onSubmit}) {
           <div
             className={toggleState === 2 ? "content  active-content" : "content"}
           >
-            <h1>Completed Tasks</h1>
+            <Completed
+                todos={todos}
+                completeTodo={completeTodo}
+                removeTodo={removeTodo}
+            />
           </div>
   
         </div>
