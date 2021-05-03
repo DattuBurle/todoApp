@@ -27,18 +27,20 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     
         
         todo.completed ? 
+
         console.log("task completed, check it in completed tab")
 
         : 
+        
         <div
-          className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+          className= 'todo-row'
           key={index}
         > 
           <div key={todo.id} className='c' >
             <input 
             type="checkbox" 
             id="check" 
-            className='dragIcon' 
+            className='checkbox' 
             onClick={() => completeTodo(todo.id)
             }/>
             {todo.text}
@@ -56,7 +58,6 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
             />
           </div>
         </div>
-      
       
   )));
 };

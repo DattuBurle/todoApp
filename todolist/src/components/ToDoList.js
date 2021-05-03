@@ -13,9 +13,24 @@ function ToDoList() {
       setSearchfield(event.target.value);
     }
 
+
+    var todoss=[], keys = Object.keys(localStorage), i = keys.length;
+
+    while ( i-- ) {
+        let valuee = localStorage.getItem(keys[i]).split(', ');
+        let textt = valuee[0];
+        let completedd;
+        if(valuee[1] === 'false'){
+          completedd = false;
+        }else{
+          completedd = true;
+        }
+        todoss.push({id : parseInt(keys[i]), text: textt, completed: completedd});
+    }
     
-    const [todos, setTodos] = useState([]);
-    
+    const [todos, setTodos] = useState(todoss);
+
+    console.log(todos);
 
     const addTodo = todo => {
         if (!todo.text || /^\s*$/.test(todo.text)){
@@ -27,7 +42,7 @@ function ToDoList() {
 
         setTodos(newTodo);
         console.log(...todos);
-        localStorage.setItem(todo.id, todo.text);
+        localStorage.setItem(todo.id, todo.text+', '+todo.completed);
     };
 
     const updateTodo = (todoId, newValue) => {
@@ -49,6 +64,7 @@ function ToDoList() {
         if (todo.id === id) {
           todo.isComplete = !todo.isComplete;
           todo.completed = !todo.completed;
+          localStorage.setItem(todo.id, todo.text+', '+todo.completed);
         }
         return todo;
       });

@@ -6,11 +6,11 @@ function Completed({ todos, completeTodo, removeTodo }) {
 
   return (
     todos.map((todo, index) => (
-    
-        
+
       todo.completed ? 
+      
       <div
-        className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+        className= 'todo-row'
         key={index}
       > 
         <div key={todo.id} className='c' >
@@ -20,6 +20,7 @@ function Completed({ todos, completeTodo, removeTodo }) {
           className='dragIcon' 
           onClick={() => completeTodo(todo.id)}
           checked="true"
+          style={{ marginRight: 10 }}
           />
           {todo.text}
         </div>
@@ -32,9 +33,11 @@ function Completed({ todos, completeTodo, removeTodo }) {
           
         </div>
       </div>
+      
 
       : 
       
+
       console.log("task completed, check it in completed tab")
     
     
