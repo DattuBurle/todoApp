@@ -20,7 +20,7 @@ function Completed({ todos, completeTodo, removeTodo }) {
           className='dragIcon' 
           onClick={() => completeTodo(todo.id)}
           checked="true"
-          style={{ marginRight: 10 }}
+          style={{marginRight: 10}}
           />
           {todo.text}
         </div>
