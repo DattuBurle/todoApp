@@ -3,7 +3,7 @@ import './ToDoList.css';
 import Header from "./Header";
 import Tabs from "./Tabs";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
-import {fetchTodos, addTodoo, updatedTodoo} from '../actions/PostActions'
+import {fetchTodos, addTodoo, updatedTodoo} from '../actions/PostActions';
 
 
 function ToDoList() {

@@ -18,7 +18,7 @@ function Tabs({ todos, completeTodo, removeTodo, updateTodo , onSubmit}) {
             className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
             onClick={() => toggleTab(1)}
           >
-            To Do
+            ToDos
           </button>
           <button
             className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
@@ -34,23 +34,30 @@ function Tabs({ todos, completeTodo, removeTodo, updateTodo , onSubmit}) {
             className={toggleState === 1 ? "content  active-content" : "content"}
           >
             <AddToDo onSubmit={onSubmit}/>
+
+            <div className= "scroll_todolist">
+              <ToDo
+                  todos={todos}
+                  completeTodo={completeTodo}
+                  removeTodo={removeTodo}
+                  updateTodo={updateTodo}
+                  onSubmit={onSubmit}
+              />
+            </div>
           
-            <ToDo
-                todos={todos}
-                completeTodo={completeTodo}
-                removeTodo={removeTodo}
-                updateTodo={updateTodo}
-            />
           </div>
   
           <div
             className={toggleState === 2 ? "content  active-content" : "content"}
           >
-            <Completed
-                todos={todos}
-                completeTodo={completeTodo}
-                removeTodo={removeTodo}
-            />
+            
+            <div className= "scroll_todolist">
+              <Completed
+                  todos={todos}
+                  completeTodo={completeTodo}
+                  removeTodo={removeTodo}
+              />
+            </div>
           </div>
   
         </div>

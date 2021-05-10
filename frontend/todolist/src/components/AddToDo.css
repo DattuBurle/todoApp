@@ -3,7 +3,8 @@
       flex: 1;
       width: 100%;
       position: sticky !important;
-      top: 141px;
+      top: 162px;
+      margin-top: -8px;
   }
 .todo-form {
   display: flex;
@@ -15,7 +16,7 @@
 .todo-input {
   padding: 10px 32px 10px 16px;
   border-radius: 4px 4px 4px 4px;
-  border: 2px solid #1976D2;
+  border: 1.5px solid #1976D2;
   outline: none;
   font-size: 14px;
   background: #ffffff !important;
