@@ -17,16 +17,6 @@ export default function(state = initialState, action){
                 ...state,
                 items: action.payload
             }
-        case actions.DELETE_TODO:
-            return{
-                ...state,
-                items: action.payload
-            }
-        case actions.COMPLETE_TODO:
-            return{
-                ...state,
-                items: action.payload
-            }
         case actions.UPDATE_TODO:
             return{
                 ...state,
