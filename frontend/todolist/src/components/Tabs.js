@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './Tabs.css';
-import ToDo from "./ToDo";
+import ToDoList from "./ToDoList";
 import AddToDo from "./AddToDo";
 import Completed from "./Completed";
 
@@ -36,7 +36,7 @@ function Tabs({ todos, completeTodo, removeTodo, updateTodo , onSubmit}) {
             <AddToDo onSubmit={onSubmit}/>
 
             <div className= "scroll_todolist">
-              <ToDo
+              <ToDoList
                   todos={todos}
                   completeTodo={completeTodo}
                   removeTodo={removeTodo}

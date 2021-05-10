@@ -1,66 +1,59 @@
-import React, { useState } from 'react';
-import AddToDo from './AddToDo';
+import React, { useContext, memo } from 'react';
+import { useDispatch } from "react-redux";
+import EditTodoForm from './EditTodoForm';
+import useToggleState from '../hooks/useToggleState';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 
+function Todo({ todo, completeTodo, removeTodo}) {
+  const dispatch = useDispatch();
+  const [isEditing, toggle] = useToggleState(false);
 
-const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
-  const [edit, setEdit] = useState({
-    id: null,
-    value: ''
-  });
-
-  const submitUpdate = value => {
-    updateTodo(edit.id, value);
-    setEdit({
-      id: null,
-      value: ''
-    });
-  };
-
-  if (edit.id) {
-    return <AddToDo edit={edit} onSubmit={submitUpdate} />;
+  if (isEditing) {
+    return (
+      <li
+        style={{ overflowY: 'hidden' }}
+        onClick={() => toggle()}
+      >
+        <EditTodoForm id={todo.id} task={todo.text} toggleEditForm={toggle} />
+      </li>
+    );
   }
 
   return (
-    todos.map((todo, index) => (
-    
-        
-        todo.completed ? 
 
-        console.log("task completed, check it in completed tab")
-
-        : 
-        
-        <div
-          className= 'todo-row'
-          key={index}
-        > 
-          <div key={todo.id} className='c' >
-            <input 
-            type="checkbox" 
-            id="check" 
-            style={{ marginRight: 10 }}
-            onClick={() => completeTodo(todo.id)}
-            />
-            {todo.text}
-          </div>
-          
-          <div className='icons'>
-            <DeleteForeverIcon
-              style={{ fontSize: 20 }}
-              onClick={() => removeTodo(todo.id)}
-              className='delete-icon'
-            />
-            <EditIcon
-              style={{ fontSize: 20 }}
-              onClick={() => setEdit({ id: todo.id, value: todo.text })}
-              className='edit-icon'
-            />
-          </div>
-        </div>
+    <div
+        className= 'todo-row'
+        key={todo.id}
+      > 
+      <div key={todo.id} className='c' >
+        <input 
+        type="checkbox" 
+        id="check" 
+        style={{ marginRight: 10 }}
+        onClick={() => completeTodo(todo.id)}
+        />
+       {todo.text}
+      </div>
       
-  )));
-};
+      <div className='icons'>
+        <DeleteForeverIcon
+          style={{ fontSize: 20 }}
+          onClick={() => removeTodo(todo.id)}
+          className='delete-icon'
+        />
+        <EditIcon
+          style={{ fontSize: 20 }}
+          onClick={e => {
+            e.stopPropagation();
+            toggle();
+          }}
+          className='edit-icon'
+        />
+      </div>
+      
+    </div>
+    );
+}
 
-export default Todo;
+export default memo(Todo);

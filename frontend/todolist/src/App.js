@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import ToDoList from './components/ToDoList';
+import ToDoApp from './components/ToDoApp';
 import { Provider } from 'react-redux';
 import store from './Store';
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <ToDoList/>
+        <ToDoApp/>
       </div>
     </Provider>
     

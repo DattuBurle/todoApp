@@ -55,7 +55,7 @@ align-items: center;
 width: 100%;
 }
 
-.edit-input{
+.edit_input{
   border:none !important;
   flex: 1;
   background-color: white;
@@ -63,3 +63,4 @@ width: 100%;
   border-bottom-color: black !important;
   outline: none !important
 }
+

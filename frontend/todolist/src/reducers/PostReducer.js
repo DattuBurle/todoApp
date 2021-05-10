@@ -22,6 +22,10 @@ export default function(state = initialState, action){
                 ...state,
                 items: action.payload
             }
+        case actions.TOGGLE_TODO:
+            return state.map(todo =>
+                todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+            )
         default:
             console.log(['action.payload'])
             return state;
