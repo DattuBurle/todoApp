@@ -26,7 +26,6 @@ function EditTodoForm({ id, task, toggleEditForm }) {
         return todo;
         });
         dispatch(updatedTodoo(updatedTodos));
-        dispatch(fetchTodos());
         toggleEditForm();
         clearValue();
       }}

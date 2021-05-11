@@ -13,7 +13,7 @@ function Completed({ todos, completeTodo, removeTodo }) {
         className= 'todo-row'
         key={index}
       > 
-        <div key={todo.id} className='c' >
+        <div key={todo.id} className='c'>
           <input 
           type="checkbox" 
           id="check" 
@@ -38,7 +38,7 @@ function Completed({ todos, completeTodo, removeTodo }) {
       : 
       
 
-      console.log("task completed, check it in completed tab")
+      console.log("task completed..., check it in completed tab")
     
     
 )));

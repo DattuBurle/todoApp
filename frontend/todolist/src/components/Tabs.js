@@ -4,7 +4,7 @@ import ToDoList from "./ToDoList";
 import AddToDo from "./AddToDo";
 import Completed from "./Completed";
 
-function Tabs({ todos, completeTodo, removeTodo, updateTodo , onSubmit}) {
+function Tabs({ todos, completeTodo, removeTodo, onSubmit}) {
     const [toggleState, setToggleState] = useState(1);
   
     const toggleTab = (index) => {
@@ -40,7 +40,6 @@ function Tabs({ todos, completeTodo, removeTodo, updateTodo , onSubmit}) {
                   todos={todos}
                   completeTodo={completeTodo}
                   removeTodo={removeTodo}
-                  updateTodo={updateTodo}
                   onSubmit={onSubmit}
               />
             </div>

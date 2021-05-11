@@ -36,27 +36,7 @@ function ToDoApp() {
         localStorage.setItem(todo.id, todo.text+', '+todo.completed);
     };
 
-    const updateTodo = (todoId, newValue) => {
-      if (!newValue.text || /^\s*$/.test(newValue.text)) {
-        return;
-      }
-  
-
-      let updatedTodos = [...todosss].map(todo => {
-        if (todo.id === todoId) {
-          todo.text = newValue.text
-          localStorage.setItem(todo.id, newValue.text+', '+todo.completed);
-        }
-        return todo;
-      });
-      console.log(updatedTodos)
-      dispatch(updatedTodoo(updatedTodos));
-      
-      dispatch(fetchTodos());
-
-      
-    };
-  
+    
     const removeTodo = id => {
       const removedArr = [...todosss].filter(todo => todo.id !== id);
       localStorage.removeItem(id);
@@ -89,7 +69,6 @@ function ToDoApp() {
             todos={listofTodos}
             completeTodo={completeTodo}
             removeTodo={removeTodo}
-            updateTodo={updateTodo}
           />
       </div>
     );
