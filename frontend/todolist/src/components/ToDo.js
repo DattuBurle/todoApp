@@ -1,12 +1,10 @@
-import React, { useContext, memo } from 'react';
-import { useDispatch } from "react-redux";
+import React, { memo } from 'react';
 import EditTodoForm from './EditTodoForm';
 import useToggleState from '../hooks/useToggleState';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 
 function Todo({ todo, completeTodo, removeTodo}) {
-  const dispatch = useDispatch();
   const [isEditing, toggle] = useToggleState(false);
 
   if (isEditing) {

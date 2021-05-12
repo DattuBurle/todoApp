@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 function Completed({ todos, completeTodo, removeTodo }) {

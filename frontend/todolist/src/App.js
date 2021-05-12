@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import ToDoApp from './components/ToDoApp';
 import { Provider } from 'react-redux';
